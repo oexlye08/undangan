@@ -16,10 +16,32 @@
 	<link rel="icon" type="image/png" href="assets/images/logo-black.png">
 	<link rel="stylesheet" href="node_modules/animate.css/animate.css">
 	<link rel="stylesheet" href="node_modules/onscroll/aos.css">
+
+	<style>
+		#top a {
+			padding: 1rem;
+			color: #007bff;
+			position: fixed;
+			right: 3rem;
+			bottom: 3rem;
+		}
+		#top a:hover {
+			color: #085eb9;
+		}
+	</style>
 	
 </head>
 <body>
 	<?php require_once('Admin/Api/koneksi.php'); ?>
+	
+
+	<div id="top">
+		<a href="#header">
+			<svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-arrow-up-square-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+				<path fill-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 8.354a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 6.207V11a.5.5 0 0 1-1 0V6.207L5.354 8.354z"/>
+			</svg>
+		</a>
+	</div>
 	<!-- start = Menu -->
 	<header>
 		<div class="container">
@@ -44,7 +66,7 @@
 		$resepsi = mysqli_query($conn,"SELECT * FROM resepsi");
 		while ($infoResepsi = mysqli_fetch_array($resepsi)) {
 	?>
-	<div data-aos="fade-down" class="main-slider" style="background:url(Admin/fileUpload/<?php echo $infoResepsi['fileGambar'];?>); background-size:cover;"  >
+	<div id="header" data-aos="fade-down" class="main-slider" style="background:url(Admin/fileUpload/<?php echo $infoResepsi['fileGambar'];?>); background-size:cover;"  >
 		<div class="display-table center-text">
 			<div class="display-table-cell">
 				<div class="slider-content animate__animated animate__fadeInUp">
@@ -99,17 +121,11 @@
 	<section class="section story-area center-text" id="sambutan">
 		<div class="container">
 			<div class="row"
-				data-aos="fade-in"
-				data-aos-offset="200"
-				data-aos-delay="10"
-				data-aos-duration="1000"
-				data-aos-easing="ease-in-out"
-				data-aos-mirror="true"
-				data-aos-once="false">
+				data-aos="fade-right">
 				<div class="col-sm-1"></div>
 				<div class="col-sm-10">
 					
-					<div class="heading  animate__animated animate__slideInLeft">
+					<div class="heading">
 						<h2 class="title">Sambutan</h2>
 						<span class="heading-bottom"><i class="icon icon-star"></i></span>
 					</div>
@@ -141,12 +157,11 @@
 
 	<!-- start = Coutdown acara dimulai resepsi -->
 	<section class="section counter-area center-text">
-		<div class="container"
-			data-aos="fade-up">
+		<div class="container">
 			<div class="row">
 			
 				<div class="col-sm-12">
-					<div class="heading">
+					<div class="heading" data-aos="fade-up">
 						<h2 class="title">Jangan Lupa</h2>
 						<div>
 							<?php
@@ -167,7 +182,7 @@
 				<div class="col-sm-2"></div>
 				<div class="col-sm-8">
 					
-					<div class="remaining-time">
+					<div class="remaining-time" data-aos="zoom-in-up">
 						<?php 
 							echo "Masih Ada Waktu ".$jam." Hari Lagi, Sampai Tanggal $hDay-$hMounth-$hYears";
 							echo "<br>";
@@ -193,7 +208,7 @@
 				<div class="col-sm-1"></div>
 				<div class="col-sm-10">
 					
-					<div class="heading">
+					<div class="heading"  data-aos="zoom-in">
 						<h2 class="title">Cerita Kita</h2>
 						<span class="heading-bottom"><i class="icon icon-star"></i></span>
 					</div>
@@ -208,18 +223,18 @@
 							$id=$infoCerita['idCerita'];
 							if ($id%2 == 0 ) {
 						?>
-						<div class="w-detail right">
+						<div class="w-detail right" data-aos="zoom-in-left">
 							 <img src="Admin/fileUpload/<?php echo $infoCerita['gambarCerita'];?>"> 
-							<h4 class="title"><?php echo $infoCerita['judulCerita'];?></h4>
-							<p><?php echo $infoCerita['isiCerita'];?></p>
+							<h4 class="title" data-aos="zoom-in"><?php echo $infoCerita['judulCerita'];?></h4>
+							<p data-aos="fade-up"><?php echo $infoCerita['isiCerita'];?></p>
 						</div>
 						<?php	
 						} else if($id%2 == 1){
 						?>
-						<div class="w-detail left">
+						<div class="w-detail left" data-aos="zoom-in-right">
 							<img src="Admin/fileUpload/<?php echo $infoCerita['gambarCerita'];?>"> 
-							<h4 class="title"><?php echo $infoCerita['judulCerita'];?></h4>
-							<p><?php echo $infoCerita['isiCerita'];?></p>
+							<h4 class="title" data-aos="zoom-in"><?php echo $infoCerita['judulCerita'];?></h4>
+							<p data-aos="fade-up"><?php echo $infoCerita['isiCerita'];?></p>
 						</div>
 						<?php
 						}
@@ -244,12 +259,12 @@
 			<div class="row">
 				<div class="col-sm-12">
 					
-					<div class="heading">
+					<div class="heading" data-aos="fade-up">
 						<h2 class="title">Wedding & Ceremonies</h2>
 						<span class="heading-bottom"><i class="color-white icon icon-star"></i></span>
 					</div>
 
-					<div class="ceremony margin-bottom">
+					<div class="ceremony margin-bottom" data-aos="zoom-in-up">
 						<?php
 							$adat = mysqli_query($conn,"SELECT * FROM adat");
 							while ($infoAdat = mysqli_fetch_array($adat)) {
@@ -274,7 +289,7 @@
 				
 				<div class="col-sm-12">
 					
-					<div class="heading">
+					<div class="heading" data-aos="fade-down">
 						<h2 class="title">Gallery Prewedding</h2>
 						<span class="heading-bottom"><i class="icon icon-star"></i></span>
 					</div>
@@ -291,7 +306,7 @@
 								
 							?>
 							<div class="col-md-4 col-sm-6">
-								<a href="Admin/fileUpload/<?php echo $infoGaleri['namaFile'];?>" data-fluidbox><img class="margin-bottom" src="Admin/fileUpload/<?php echo $infoGaleri['namaFile'];?>" style="width:350px; height:200px;" ></a>
+								<a href="Admin/fileUpload/<?php echo $infoGaleri['namaFile'];?>" data-fluidbox><img data-aos="zoom-in-up" class="margin-bottom" src="Admin/fileUpload/<?php echo $infoGaleri['namaFile'];?>" style="width:350px; height:200px;" ></a>
 							</div>
 							<?php
 								}
@@ -301,7 +316,7 @@
 						</div>
 						<!-- end = untuk tampilkan foto -->
 						
-						<a class="btn-2 margin-bottom gallery-btn" href="gallery.php">VIEW ALL GALLERY</a>
+						<a class="btn-2 margin-bottom gallery-btn" href="gallery.php" data-aos="flip-up">VIEW ALL GALLERY</a>
 						
 					</div>
 					
@@ -320,11 +335,11 @@
 					<div class="col-sm-2"></div>
 					<div class="col-sm-10">
 						<div class="heading">
-							<h3 class="title">Lokasi Resepsi</h3>
-							<i class="icon icon-star"></i>
+							<h3 class="title"  data-aos="fade-right">Lokasi Resepsi</h3>
+							<i class="icon icon-star"  data-aos="fade-zoom-in"></i>
 						</div>
 						
-						<div class="margin-bottom">
+						<div class="margin-bottom" data-aos="zoom-out-left">
 							<p>Alamat :</p>
 							<?php 
 							$lokasi = mysqli_query($conn,"SELECT * FROM resepsi");
@@ -345,7 +360,8 @@
 				<div class="row">
 					<div class="col-sm-2"></div>
 					<div class="col-sm-10">
-						<div class="margin-bottom">
+						<div class="margin-bottom" data-aos="fade-up"
+						data-aos-anchor-placement="top-center">
 							<img src="Admin/fileUpload/<?php echo $infoLokasi['gambarGedung']; } ?>" style="width :535px; height :350px;">
 						</div>
 					</div>
@@ -402,9 +418,10 @@
 	<script src="assets/js/jquery.fluidbox.min.js"></script>
 	<script src="assets/js/scripts.js"></script>
 	<script src="node_modules/onscroll/aos.js"></script>
+	<script src="node_modules/onscroll/smoothscroll.js"></script>
 	<script>
 		AOS.init({
-			duration: 1500,
+			duration: 1200,
 		});
 	</script>
 	
