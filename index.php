@@ -13,9 +13,9 @@
 	<link href="assets/css/font-icon.css" rel="stylesheet">
 	<link href="assets/css/styles.css" rel="stylesheet">
 	<link href="assets/css/responsive.css" rel="stylesheet">
+	<link href="assets/css/aos.css" rel="stylesheet">
+	<link href="assets/css/animate.css" rel="stylesheet">
 	<link rel="icon" type="image/png" href="assets/images/logo-black.png">
-	<link rel="stylesheet" href="node_modules/animate.css/animate.css">
-	<link rel="stylesheet" href="node_modules/onscroll/aos.css">
 
 	<style>
 		#top a {
@@ -417,7 +417,7 @@
 	<script src="assets/js/jquery.countdown.min.js"></script>
 	<script src="assets/js/jquery.fluidbox.min.js"></script>
 	<script src="assets/js/scripts.js"></script>
-	<script src="node_modules/onscroll/aos.js"></script>
+	<script src="assets/js/aos.js"></script>
 	<script src="node_modules/onscroll/smoothscroll.js"></script>
 	<script>
 		AOS.init({
