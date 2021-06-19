@@ -418,7 +418,7 @@
 	<script src="assets/js/jquery.fluidbox.min.js"></script>
 	<script src="assets/js/scripts.js"></script>
 	<script src="assets/js/aos.js"></script>
-	<script src="node_modules/onscroll/smoothscroll.js"></script>
+	<script src="assets/js/smoothscroll.js"></script>
 	<script>
 		AOS.init({
 			duration: 1200,
