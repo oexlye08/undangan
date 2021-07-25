@@ -8,6 +8,7 @@
 	<!-- Font -->
 	<link href="https://fonts.googleapis.com/css?family=Playball%7CBitter" rel="stylesheet">
 	<!-- Stylesheets -->
+	<link href="assets/css/poup.css" rel="stylesheet">
 	<link href="assets/css/bootstrap.css" rel="stylesheet">
 	<link href="assets/css/fluidbox.min.css" rel="stylesheet">
 	<link href="assets/css/font-icon.css" rel="stylesheet">
@@ -17,31 +18,11 @@
 	<link href="assets/css/animate.css" rel="stylesheet">
 	<link rel="icon" type="image/png" href="assets/images/logo-black.png">
 
-	<style>
-		#top a {
-			padding: 1rem;
-			color: #007bff;
-			position: fixed;
-			right: 3rem;
-			bottom: 3rem;
-		}
-		#top a:hover {
-			color: #085eb9;
-		}
-	</style>
+
 	
 </head>
 <body>
 	<?php require_once('Admin/Api/koneksi.php'); ?>
-	
-
-	<div id="top">
-		<a href="#header">
-			<svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-arrow-up-square-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-				<path fill-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 8.354a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 6.207V11a.5.5 0 0 1-1 0V6.207L5.354 8.354z"/>
-			</svg>
-		</a>
-	</div>
 	<!-- start = Menu -->
 	<header>
 		<div class="container">
@@ -52,9 +33,9 @@
 				<li><a href="#sambutan">SAMBUTAN</a></li>
 				<li><a href="#ceritaKita">CERITA KITA</a></li>
 				<li><a href="#gallery">GALERI</a></li>
-				<li><a href="listTamu.php">TAMU UNDANGAN</a></li>
+				<!-- <li><a href="listTamu.php">TAMU UNDANGAN</a></li>
 				<li><a href="aboutApps.php">TENTANG APLIKASI</a></li>
-				<li><a href="Login.php">MASUK</a></li>
+				<li><a href="Login.php">MASUK</a></li> -->
 			</ul>
 		</div>
 	</header>
@@ -126,7 +107,8 @@
 				<div class="col-sm-10">
 					
 					<div class="heading">
-						<h2 class="title">Sambutan</h2>
+						<!-- <h2 class="title">Sambutan</h2> -->
+						<h3 class="title">اَلسَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَا تُهُ</h3>
 						<span class="heading-bottom"><i class="icon icon-star"></i></span>
 					</div>
 					<div data-aos="fade-left">
@@ -136,14 +118,14 @@
 							while ($tampilSambutan=mysqli_fetch_array($sambutan)) {
 						?>
 						<!-- bagian pembuka sambutan-->
-						<p class="desc margin-bottom"><?php echo $tampilSambutan['pembukaSambutan'];?> 
+						<h4 class="desc margin-bottom"><?php echo $tampilSambutan['pembukaSambutan'];?> </h4>
 						<br>
 						<!-- bagian isi sambutan -->
 						<?php echo $tampilSambutan['isiSambutan'];?> 
 						<br>
 						<!-- bagian penutup sambutan -->
 						<?php echo $tampilSambutan['penutupSambutan'];?>
-						</p>
+						</h3>
 						<?php } ?>
 						<!-- end = untuk menampilkan sambutan -->
 					</div>
@@ -377,13 +359,13 @@
 	
 	<!-- start = footer  -->
 	<footer>
-		<div class="container center-text" id="sosmed">
+		<div class="container center-text" id="sosmed" data-aos="fade-in">
 			
-			<div class="logo-wrapper">
-				<a class="logo" href="#"><img src="assets/images/logo-black.png" alt="Logo Image"></a>
-				<i class="icon icon-star"></i>
+			<div class="logo-wrapper" >
+				<a class="logo" data-aos="fade-down" href="#"><img src="assets/images/logo-black.png" alt="Logo Image"></a>
+				<i class="icon icon-star" data-aos="fade-up"></i>
 			</div>
-			<ul class="social-icons">
+			<ul class="social-icons" data-aos="zoom-in">
 				<?php 
 					$sosmed = mysqli_query($conn,"SELECT * FROM sosmed");
 					while ($infoSosmed = mysqli_fetch_array($sosmed)) {
@@ -403,10 +385,10 @@
 				<li><a href="#sambuta">SAMBUTAN</a></li>
 				<li><a href="#ceritaKita">CERITA KITA</a></li>
 				<li><a href="#gallery">GALERI</a></li>
-				<li><a href="listTamu.php">TAMU UNDANGAN</a></li>
+				<!-- <li><a href="listTamu.php">TAMU UNDANGAN</a></li> -->
 			</ul>
 			<p class="copyright"> Copyright &copy;<script>document.write(new Date().getFullYear());</script>
-			 -  Dibuat dengan <i class="icon-heart" aria-hidden="true"></i> oleh Medan City Store</p>
+			 -  Dibuat dengan <i class="icon-heart" aria-hidden="true"></i> oleh Oki Sulton</p>
 		</div>
 	</footer>
 	<!-- end = footer -->

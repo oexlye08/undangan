@@ -45,13 +45,13 @@ $result = mysqli_query($conn,$sql);
 					<tbody>
 					<?php
 					while ($data = mysqli_fetch_array($result,MYSQL_ASSOC)){
-						$no_wa = $data[NO_WA];
-						$tgl_kirim = $data[TGL_KIRIM];
-						$status = $data[STATUS];
-						$format_wa = $data[FORMAT_WA];
-						$isi_wa = $data[ISI_WA];
-						$var_1 = $data[VAR_1];
-						$var_2 = $data[VAR_2];
+						$no_wa = $data['NO_WA'];
+						$tgl_kirim = $data['TGL_KIRIM'];
+						$status = $data['STATUS'];
+						$format_wa = $data['FORMAT_WA'];
+						$isi_wa = $data['ISI_WA'];
+						$var_1 = $data['VAR_1'];
+						$var_2 = $data['VAR_2'];
 						
 					?>
 					<tr>

@@ -13,11 +13,14 @@
 	<link href="assets/css/font-icon.css" rel="stylesheet">
 	<link href="assets/css/styles.css" rel="stylesheet">
 	<link href="assets/css/responsive.css" rel="stylesheet">
+	<link href="assets/css/aos.css" rel="stylesheet">
+	<link href="assets/css/animate.css" rel="stylesheet">
 	<link rel="icon" type="image/png" href="assets/images/logo-black.png">
 	
 </head>
 <body>
 	<?php require_once('Admin/Api/koneksi.php'); ?>
+	
 	<!-- start = Menu -->
 	<header>
 		<div class="container">
@@ -28,9 +31,9 @@
 				<li><a href="index.php#sambutan">SAMBUTAN</a></li>
 				<li><a href="index.php#ceritaKita">CERITA KITA</a></li>
 				<li><a href="gallery.php">GALERI</a></li>
-				<li><a href="listTamu.php">TAMU UNDANGAN</a></li>
+				<!-- <li><a href="listTamu.php">TAMU UNDANGAN</a></li>
 				<li><a href="aboutApps.php">TENTANG APLIKASI</a></li>
-				<li><a href="Login.php">MASUK</a></li>
+				<li><a href="Login.php">MASUK</a></li> -->
 			</ul>
 		</div>
 	</header>
@@ -42,10 +45,10 @@
 		$resepsi = mysqli_query($conn,"SELECT * FROM resepsi");
 		while ($infoResepsi = mysqli_fetch_array($resepsi)) {
 	?>
-	<div class="main-slider" style="background:url(Admin/fileUpload/<?php echo $infoResepsi['fileGambar'];?>); background-size:cover;"  >
+	<div id="header" data-aos="fade-down" class="main-slider" style="background:url(Admin/fileUpload/<?php echo $infoResepsi['fileGambar'];?>); background-size:cover;"  >
 		<div class="display-table center-text">
 			<div class="display-table-cell">
-				<div class="slider-content">
+				<div class="slider-content animate__animated animate__fadeInUp">
 				
 					<i class="small-icon icon icon-tie"></i>
 					<h3 class="pre-title">Gallery</h3>
@@ -68,8 +71,8 @@
 				<div class="col-sm-12">
 					
 					<div class="heading">
-						<h2 class="title">Gallery Prewedding</h2>
-						<span class="heading-bottom"><i class="icon icon-star"></i></span>
+						<h2 class="title" data-aos="fade-down">Gallery Prewedding</h2>
+						<span class="heading-bottom" data-aos="fade-up"><i class="icon icon-star"></i></span>
 					</div>
 					
 					<div class="image-gallery">
@@ -87,12 +90,12 @@
 								<?php 
 								$judul = $infoGaleri['judulPhoto'];
 								if (empty($judul)) {
-									echo "<h3> Prewedding </h3>";	
+									echo "<h3 data-aos='zoom-in-up'> Prewedding </h3>";	
 								}else if (!empty($judul)){
-									echo "<h3>".$judul."</h3>";
+									echo "<h3 data-aos='zoom-in-up'>".$judul."</h3>";
 								}
 								?>
-								<a href="Admin/fileUpload/<?php echo $infoGaleri['namaFile'];?>" data-fluidbox><img class="margin-bottom" src="Admin/fileUpload/<?php echo $infoGaleri['namaFile'];?>" style="width:350px; height:350px;" ></a>
+								<a href="Admin/fileUpload/<?php echo $infoGaleri['namaFile'];?>" data-fluidbox><img class="margin-bottom" data-aos="zoom-in-up" src="Admin/fileUpload/<?php echo $infoGaleri['namaFile'];?>" style="width:350px; height:350px;" ></a>
 							</div>
 							<?php
 								}
@@ -114,13 +117,13 @@
 	
 	<!-- start = footer  -->
 	<footer>
-		<div class="container center-text" id="sosmed">
+		<div class="container center-text" id="sosmed" data-aos="fade-in">
 			
 			<div class="logo-wrapper">
-				<a class="logo" href="#"><img src="assets/images/logo-black.png" alt="Logo Image"></a>
-				<i class="icon icon-star"></i>
+				<a class="logo" data-aos="fade-down" href="#"><img src="assets/images/logo-black.png" alt="Logo Image"></a>
+				<i class="icon icon-star" data-aos="fade-up"></i>
 			</div>
-			<ul class="social-icons">
+			<ul class="social-icons" data-aos="zoom-in">
 				<?php 
 					$sosmed = mysqli_query($conn,"SELECT * FROM sosmed");
 					while ($infoSosmed = mysqli_fetch_array($sosmed)) {
@@ -154,6 +157,13 @@
 	<script src="assets/js/jquery.countdown.min.js"></script>
 	<script src="assets/js/jquery.fluidbox.min.js"></script>
 	<script src="assets/js/scripts.js"></script>
+	<script src="assets/js/aos.js"></script>
+	<script src="assets/js/smoothscroll.js"></script>
+	<script>
+		AOS.init({
+			duration: 1200,
+		});
+	</script>
 	
 </body>
 </html>

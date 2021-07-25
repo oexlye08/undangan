@@ -48,13 +48,13 @@
 						<tbody>
 						<?php 
 						while ($data = mysqli_fetch_array($result,MYSQL_ASSOC)){
-							$id_msg = $data[ID_MSG];
-							$no_wa = $data[NO_WA];
-							$status = $data[STATUS];
-							$format_wa = $data[FORMAT_WA];
-							$isi_wa = $data[ISI_WA];
-							$var_1 = $data[VAR_1];
-							$var_2 = $data[VAR_2];
+							$id_msg = $data['ID_MSG'];
+							$no_wa = $data['NO_WA'];
+							$status = $data['STATUS'];
+							$format_wa = $data['FORMAT_WA'];
+							$isi_wa = $data['ISI_WA'];
+							$var_1 = $data['VAR_1'];
+							$var_2 = $data['VAR_2'];
 							
 							
 						?>
@@ -90,13 +90,13 @@
 
 					</div>
 					<div class="col-sm-2">
-							<input type="hidden" name="url" value="<?php $_SERVER[REQUEST_URI]; ?>">
+							<input type="hidden" name="url" value="<?php $_SERVER['REQUEST_URI']; ?>">
 							<input type="submit" value="Update Format" class="btn btn-primary">
 						</form>
 					</div>
 					<div class="col-sm-2">
 						<form action='kirim_wa.php' method='POST' onsubmit="return confirm('Anda yakin akan mengirimkan WA?')">
-							<input type="hidden" name="url" value="<?php $_SERVER[REQUEST_URI]; ?>">
+							<input type="hidden" name="url" value="<?php $_SERVER['REQUEST_URI']; ?>">
 							<input type="submit" value="Kirim Pesan" class="btn btn-info">
 						</form>
 						<?php
