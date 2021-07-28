@@ -16,11 +16,12 @@
 	<link href="assets/css/responsive.css" rel="stylesheet">
 	<link href="assets/css/aos.css" rel="stylesheet">
 	<link href="assets/css/animate.css" rel="stylesheet">
+	<link href="assets/css/nav.css" rel="stylesheet">
 	<link rel="icon" type="image/png" href="assets/images/logo-black.png">
 
-
-	
 </head>
+
+
 <body>
 	<?php require_once('Admin/Api/koneksi.php'); ?>
 	<!-- start = Menu -->
@@ -41,7 +42,43 @@
 	</header>
 	<!-- end = menu -->
 	
-	
+	<!-- Bottom Navbar -->
+
+	<nav class="nav d-md-none d-lg-none d-xl-none" >
+	<a href="#header" class="nav__link">
+		<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+			<path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+			<path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+		</svg>
+		<span class="nav__text">Home</span>
+	</a>
+	<a href="#sambutan" class="nav__link">
+		<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+			<path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
+		</svg>
+		<span class="nav__text">Couple</span>
+	</a>
+	<a href="#ceritaKita" class="nav__link">
+		<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-book" viewBox="0 0 16 16">
+			<path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
+		</svg>
+		<span class="nav__text">Story</span>
+	</a>
+	<a href="#gallery" class="nav__link">
+		<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-images" viewBox="0 0 16 16">
+			<path d="M4.502 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
+			<path d="M14.002 13a2 2 0 0 1-2 2h-10a2 2 0 0 1-2-2V5A2 2 0 0 1 2 3a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v8a2 2 0 0 1-1.998 2zM14 2H4a1 1 0 0 0-1 1h9.002a2 2 0 0 1 2 2v7A1 1 0 0 0 15 11V3a1 1 0 0 0-1-1zM2.002 4a1 1 0 0 0-1 1v8l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094l1.777 1.947V5a1 1 0 0 0-1-1h-10z"/>
+		</svg>
+		<span class="nav__text">Galery</span>
+	</a>
+	<a href="#location" class="nav__link">
+		<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
+			<path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"/>
+			<path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+		</svg>
+		<span class="nav__text">Location</span>
+	</a>
+	</nav>
 	<!-- start = konten save the date -->
 	<?php 
 		$resepsi = mysqli_query($conn,"SELECT * FROM resepsi");
@@ -101,17 +138,16 @@
 	<!-- start = konten sambutan -->
 	<section class="section story-area center-text" id="sambutan">
 		<div class="container">
-			<div class="row"
-				data-aos="fade-right">
+			<div class="row">
 				<div class="col-sm-1"></div>
 				<div class="col-sm-10">
 					
 					<div class="heading">
 						<!-- <h2 class="title">Sambutan</h2> -->
-						<h3 class="title">اَلسَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَا تُهُ</h3>
-						<span class="heading-bottom"><i class="icon icon-star"></i></span>
+						<h3 class="title" data-aos="flip-left">اَلسَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللهِ وَبَرَكَا تُهُ</h3>
+						<span class="heading-bottom" data-aos="zoom-in-up"><i class="icon icon-star"></i></span>
 					</div>
-					<div data-aos="fade-left">
+					<div data-aos="zoom-in-down">
 						<!-- statrt = untuk menampilkan sambutan -->
 						<?php
 							$sambutan = mysqli_query($conn,"SELECT * FROM sambutan");
@@ -136,6 +172,21 @@
 	</section>
 	<!-- end =konten sambutan -->
 	
+	<!-- satart = mempelai -->
+	<section class="contact-area" id="mempelai">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-2">
+					<h3>wkwkwkk</h3>
+				</div>
+				<div class="col-sm-2">
+					<h3>asjkasdjsd</h3>
+					<p>sadsdsad</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- end = mempelai -->
 
 	<!-- start = Coutdown acara dimulai resepsi -->
 	<section class="section counter-area center-text">
@@ -310,7 +361,7 @@
 	
 
 	<!-- satart = lokasi prewed -->
-	<section class="contact-area">
+	<section class="contact-area" id="location">
 		<div class="contact-wrapper section float-left">
 			<div class="container">
 				<div class="row">
@@ -340,11 +391,11 @@
 		<div class="contact-wrapper section float-right">
 			<div class="container">
 				<div class="row">
-					<div class="col-sm-2"></div>
+					<div class="col-sm-3"></div>
 					<div class="col-sm-10">
 						<div class="margin-bottom" data-aos="fade-up"
 						data-aos-anchor-placement="top-center">
-							<img src="Admin/fileUpload/<?php echo $infoLokasi['gambarGedung']; } ?>" style="width :535px; height :350px;">
+							<img src="Admin/fileUpload/<?php echo $infoLokasi['gambarGedung']; } ?>" style="max-width: 100%; height: auto;">
 						</div>
 					</div>
 				</div>
@@ -355,7 +406,6 @@
 	
 	</section>
 	<!-- end = lokasi prewed -->
-	
 	
 	<!-- start = footer  -->
 	<footer>
@@ -405,6 +455,11 @@
 		AOS.init({
 			duration: 1200,
 		});
+	</script>
+
+	<script type="text/javascript">
+		var el = document.documentElement;
+		el.requestFullscreen
 	</script>
 	
 </body>
