@@ -1,0 +1,27 @@
+section.couple{
+    margin: 50px auto;
+    display: flex;
+    width: auto;
+    justify-content: space-between;
+    position:relative;
+}
+
+.column-couple-right{
+    position: relative;
+    top: 0;
+}
+
+.column-couple-left{
+    position: relative;
+    top: 0;
+}
+
+.photo {
+  max-width: 100%;
+  height: auto;
+  width: 250px;
+  height: 300px;
+  object-fit: cover;
+  overflow: hidden;
+  border-radius: 50%;
+}

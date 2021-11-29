@@ -95,7 +95,7 @@
 									echo "<h3 data-aos='zoom-in-up'>".$judul."</h3>";
 								}
 								?>
-								<a href="Admin/fileUpload/<?php echo $infoGaleri['namaFile'];?>" data-fluidbox><img class="margin-bottom" data-aos="zoom-in-up" src="Admin/fileUpload/<?php echo $infoGaleri['namaFile'];?>" style="width:350px; height:350px;" ></a>
+								<a href="Admin/fileUpload/<?php echo $infoGaleri['namaFile'];?>" data-fluidbox><img class="margin-bottom" data-aos="zoom-in-up" src="Admin/fileUpload/<?php echo $infoGaleri['namaFile'];?>" style="max-width: 100%; width:350px; height:450px; object-fit: cover; object-position: 100% 70%" ></a>
 							</div>
 							<?php
 								}
@@ -143,10 +143,10 @@
 				<li><a href="#sambuta">SAMBUTAN</a></li>
 				<li><a href="#ceritaKita">CERITA KITA</a></li>
 				<li><a href="#gallery">GALERI</a></li>
-				<li><a href="listTamu.php">TAMU UNDANGAN</a></li>
+				<!-- <li><a href="listTamu.php">TAMU UNDANGAN</a></li> -->
 			</ul>
 			<p class="copyright"> Copyright &copy;<script>document.write(new Date().getFullYear());</script>
-			 -  Dibuat dengan <i class="icon-heart" aria-hidden="true"></i> oleh Medan City Store/p>
+			 -  Dibuat dengan <i class="icon-heart" aria-hidden="true"></i> oleh Oki Sulton</p>
 		</div>
 	</footer>
 	<!-- end = footer -->

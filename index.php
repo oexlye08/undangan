@@ -17,6 +17,7 @@
 	<link href="assets/css/aos.css" rel="stylesheet">
 	<link href="assets/css/animate.css" rel="stylesheet">
 	<link href="assets/css/nav.css" rel="stylesheet">
+	<link href="assets/css/couple.css" rel="stylesheet">
 	<link rel="icon" type="image/png" href="assets/images/logo-black.png">
 
 </head>
@@ -52,7 +53,7 @@
 		</svg>
 		<span class="nav__text">Home</span>
 	</a>
-	<a href="#sambutan" class="nav__link">
+	<a href="#couple" class="nav__link">
 		<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
 			<path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
 		</svg>
@@ -84,7 +85,7 @@
 		$resepsi = mysqli_query($conn,"SELECT * FROM resepsi");
 		while ($infoResepsi = mysqli_fetch_array($resepsi)) {
 	?>
-	<div id="header" data-aos="fade-down" class="main-slider" style="background:url(Admin/fileUpload/<?php echo $infoResepsi['fileGambar'];?>); background-size:cover;"  >
+	<div id="header" data-aos="fade-down" class="main-slider" style="background:url(Admin/fileUpload/<?php echo $infoResepsi['fileGambar'];?>); background-size:cover; "  >
 		<div class="display-table center-text">
 			<div class="display-table-cell">
 				<div class="slider-content animate__animated animate__fadeInUp">
@@ -173,18 +174,32 @@
 	<!-- end =konten sambutan -->
 	
 	<!-- satart = mempelai -->
-	<section class="contact-area" id="mempelai">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-2">
-					<h3>wkwkwkk</h3>
-				</div>
-				<div class="col-sm-2">
-					<h3>asjkasdjsd</h3>
-					<p>sadsdsad</p>
-				</div>
+	
+	
+	<section class="contact-area center-text" id="couple">
+		<div class="heading w-details-area"  data-aos="zoom-in">
+			<h2 class="title">Mempelai</h2>
+			<span class="heading-bottom"><i class="icon icon-star"></i></span>
+		</div>
+		<div class="contact-wrapper section float-left">
+			<div class="container">	
+				<img class="photo" data-aos="fade-right" src="assets/images/oki2.jpeg">
+				<h3 data-aos="zoom-out">Oki Sulton</h3>
+				<h5 data-aos="fade-down">Putra Bp. Romadon & Ibu Tasmiyah</h5>
+				<h6 data-aos="zoom-in-up">Kuwaton (03/03), Purwodadi, Tembarak, Temanggung</h6>
 			</div>
 		</div>
+		<!-- start = foto gedung -->
+		<div class="contact-wrapper section float-left">
+			<div class="container ">
+				<img class="photo" data-aos="fade-left" src="assets/images/hana2.jpeg">
+				<h3 data-aos="zoom-out">Siti Nurhana</h3>
+				<h5 data-aos="fade-down">Putri Bp. Sumarlan & Ibu Kuliyah</h5>
+				<h6 data-aos="zoom-in-up">Dalem (02/01), Teogowanuh, Kaloran, Temanggung</h6>
+			</div>
+		</div>
+		
+	
 	</section>
 	<!-- end = mempelai -->
 
@@ -339,7 +354,7 @@
 								
 							?>
 							<div class="col-md-4 col-sm-6">
-								<a href="Admin/fileUpload/<?php echo $infoGaleri['namaFile'];?>" data-fluidbox><img data-aos="zoom-in-up" class="margin-bottom" src="Admin/fileUpload/<?php echo $infoGaleri['namaFile'];?>" style="width:350px; height:200px;" ></a>
+								<a href="Admin/fileUpload/<?php echo $infoGaleri['namaFile'];?>" data-fluidbox><img data-aos="zoom-in-up" class="margin-bottom" src="Admin/fileUpload/<?php echo $infoGaleri['namaFile'];?>" style="max-width: 100%; width:350px; height:450px; object-fit: cover; object-position: 100% 70%" ></a>
 							</div>
 							<?php
 								}
@@ -382,6 +397,11 @@
 						
 							?>	
 						</div>
+						<div>
+							<a href="https://bit.ly/OkiHanaWeddingMaps">
+								<h4>Open in Maps</h4>
+							</a>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -395,7 +415,7 @@
 					<div class="col-sm-10">
 						<div class="margin-bottom" data-aos="fade-up"
 						data-aos-anchor-placement="top-center">
-							<img src="Admin/fileUpload/<?php echo $infoLokasi['gambarGedung']; } ?>" style="max-width: 100%; height: auto;">
+								<img src="Admin/fileUpload/<?php echo $infoLokasi['gambarGedung']; } ?>" style="max-width: 100%; height: auto;">
 						</div>
 					</div>
 				</div>
@@ -432,7 +452,7 @@
 			</ul>
 			<ul class="footer-links">
 				<li><a href="index.php">BERANDA</a></li>
-				<li><a href="#sambuta">SAMBUTAN</a></li>
+				<li><a href="#sambutan">SAMBUTAN</a></li>
 				<li><a href="#ceritaKita">CERITA KITA</a></li>
 				<li><a href="#gallery">GALERI</a></li>
 				<!-- <li><a href="listTamu.php">TAMU UNDANGAN</a></li> -->
