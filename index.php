@@ -1,10 +1,23 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-	<title>Wedding Invitation</title>
+	<title>The Wedding of Oki & Hana</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="UTF-8">
+	
+	<!-- SEO -->
+	<meta name="description" content="Minggu, 19 Desember 2021">
+	<meta property="og:title" content="The Wedding Of oki &amp; Hana" />
+	<meta property="og:url" content="http://okihana.my.id" />
+	<meta property="og:description" content="Minggu, 19 Desember 2021">
+	<meta property="og:image" content="http://okihana.my.id/assets/images/thumbnail.jpeg">
+	<meta property="og:image:width" content="500" />
+    <meta property="og:image:height" content="333" />
+    <meta property="og:image:alt" content="The Wedding Of Oki &#038; Hana" />
+    <meta property="og:image:type" content="image/jpeg" />
+	<meta property="og:type" content="article" />
+	<meta property="og:locale" content="en_US" />
 	<!-- Font -->
 	<link href="https://fonts.googleapis.com/css?family=Playball%7CBitter" rel="stylesheet">
 	<!-- Stylesheets -->
@@ -19,7 +32,7 @@
 	<link href="assets/css/nav.css" rel="stylesheet">
 	<link href="assets/css/couple.css" rel="stylesheet">
 	<link rel="icon" type="image/png" href="assets/images/logo-black.png">
-
+	
 </head>
 
 
@@ -85,7 +98,7 @@
 		$resepsi = mysqli_query($conn,"SELECT * FROM resepsi");
 		while ($infoResepsi = mysqli_fetch_array($resepsi)) {
 	?>
-	<div id="header" data-aos="fade-down" class="main-slider" style="background:url(Admin/fileUpload/<?php echo $infoResepsi['fileGambar'];?>); background-size:cover; "  >
+	<div id="header" data-aos="fade-down" class="main-slider" style="background:url(Admin/fileUpload/<?php echo $infoResepsi['fileGambar'];?>); background-size:cover;">
 		<div class="display-table center-text">
 			<div class="display-table-cell">
 				<div class="slider-content animate__animated animate__fadeInUp">
@@ -195,7 +208,7 @@
 				<img class="photo" data-aos="fade-left" src="assets/images/hana2.jpeg">
 				<h3 data-aos="zoom-out">Siti Nurhana</h3>
 				<h5 data-aos="fade-down">Putri Bp. Sumarlan & Ibu Kuliyah</h5>
-				<h6 data-aos="zoom-in-up">Dalem (02/01), Teogowanuh, Kaloran, Temanggung</h6>
+				<h6 data-aos="zoom-in-up">Dalem (02/01), Tegowanuh, Kaloran, Temanggung</h6>
 			</div>
 		</div>
 		
@@ -397,8 +410,8 @@
 						
 							?>	
 						</div>
-						<div>
-							<a href="https://bit.ly/OkiHanaWeddingMaps">
+						<div data-aos="zoom-in-up">
+							<a href="http://maps.okihana.my.id" target="_blank">
 								<h4>Open in Maps</h4>
 							</a>
 						</div>
@@ -481,6 +494,120 @@
 		var el = document.documentElement;
 		el.requestFullscreen
 	</script>
+	
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+	<style type="text/css">
+		.modalx{
+			position: fixed;
+			z-index: 2000;
+			width: 100%;
+			height: 100vh;
+			top:0;
+			left:0;
+			background-color: transparent;
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+			transform: translateY(0)
+			
+		}
+		.overlayy{
+			background-color: #000;
+			position:relative;
+			width: 100%;
+			height: 100%;
+			z-index: 2001;
+			top:0;
+			opacity: 0.7;
+			left: 0;
+			
+		}
+		.content-modalx{
+			background-color: transparent;
+			position:absolute;
+			width: 100%;
+			height: 100%;
+			z-index: 2002;
+			top:0;
+			color:WHITE;
+			left: 0;
+			
+		}
+		.info_modalx{
+			margin:150px auto;
+			width: 90%;
+			display: flex;
+			height: auto;
+			flex-direction: column;
+			justify-content: center;
+			
+		}
+		.info_modalx{
+			width: 100%;
+			text-align: center;
+			height: auto;
+			margin-bottom: 30px;
+			
+		}
+		.info_title{
+			font-family: "Playball";
+			font-size: 50px;
+			font-weight: 300;
+			
+		}
+		.info_button button{
+			background-color: #E57F85;
+			font-family: "Poppins";
+			font-weight: 400;
+			color: #FFFFFF;
+			border:none;
+			padding:15px 50px;
+			font-size: 15px;
+			border-radius: 100px;
+			cursor: pointer;
+			outline: none;
+		}
+		.removeModals{
+			transform: translateY(100%);
+			transition: 1s ease-in-out;
+			
+		}
+	</style>
+
+	<div class="modalx" data-sampul='assets/images/bg.jpeg'>
+		<div class="overlayy"></div>
+		<div class="content-modalx">
+			<div class="info_modalx">
+			    
+			<h4 style="text-align: center;"><span style="color: #ffffff;">Kepada :</span></h4>
+				<div class="info_title">
+					
+						<?php
+						echo$_GET["to"]
+						?>
+				</div><br>
+	<p style="text-align: center;"><span style="color: #ffffff;">Tanpa Mengurangi Rasa Hormat, Kami Mengundang Anda<br>Untuk Hadir Di Acara Pernikahan Kami.</span></p><br><br>
+				<div class="info_button">
+					<button><i class="fa fa-envelope-open"></i> Buka Undangan</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		const sampul = jQuery('.modalx').data('sampul');
+		jQuery('.modalx').css('background-image','url('+sampul+')');
+		jQuery('body').css('overflow','hidden');
+		jQuery('.info_button button').on('click',function(){
+		jQuery('.modalx').addClass('removeModals');
+		jQuery('body').css('overflow','auto');
+		document.getElementById("song").play();
+		});
+	</script>
+	<center><audio id="song" autoplay controls loop>
+	<source src="http://okihana.my.id/assets/music/lagu.mp3">
+	</audio></center>
 	
 </body>
 </html>
